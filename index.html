@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finite-Difference Formulas</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="math.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+            <button class="faq"> <a href="FAQ.html">FAQ</a>  </button>
+            <img class="logo" src="./images/teacher.png" alt="LOGO">
+    </header>
+    <section>
+      
+        <div class="flex-section" id="flex-section">
+            <div class="left-side">
+                <h2>Numerical</h2>
+                <p class="diff">differentiation</p>
+                <p>approximating derivatives using numerical methods</p>
+                <button class="Start-button" id="Start-button">Lets start here</button>   
+            </div>
+            <div class="right-side">
+                <img class="background" src="./images/Mathematics-bro.png" alt="">
+            </div>
+        </div>
+
+        <!-- div- blank -->
+        
+        <div class="log-in-pop-up">
+            <nav>
+                <a href="index.html">Home</a>
+            </nav>
+                <div class="login-container"> 
+                    <h1>Finite-Difference Calculator</h1>
+                    <form class="derivativeForm" id="derivativeForm" onsubmit="event.preventDefault()">
+                        <label for="functionInput"></label>
+                        <input type="text" class="placeH" id="functionInput" placeholder="Function f(x):" required><br><br>
+                        <div class="flex-row">
+                            <label for="xInput"></label>
+                            <input type="number" class="placeH" id="xInput" step="any" placeholder="Value of x (xi):" required><br><br>
+                            <label for="hInput"></label>
+                            <input type="number" class="placeH placeH-w" id="hInput" step="any" placeholder="Step size (h):" required><br><br>
+                        </div>
+                        <div class="flex-row-1">
+                            <p>Choose Method</p>
+                        </div>
+                        <div class="flex-row-method">
+                            <select id="methodInput" onchange="clearTable()">
+                                <option value="forward">Forward</option>
+                                <option value="backward">Backward</option>
+                                <option value="centered">Centered</option>
+                            </select>
+                        </div>
+                        <div class="flex-row">
+                            <input type="button" class="placeHL" value="First Derivative" onclick="computeDerivative(1)">
+                            <input type="button" class="placeHL placeH-w" value="Second Derivative" onclick="computeDerivative(2)">
+                            <input type="button" class="placeHL placeH-w" value="Third Derivative" onclick="computeDerivative(3)">
+                            <input type="button" class="placeHL placeH-w" value="Fourth Derivative" onclick="computeDerivative(4)">
+                        </div>
+                        <div class="flex-row-last">
+                            <input type="button" class="placeHLL" value="All Derivatives" onclick="computeAllDerivatives()">
+                            <input type="button" class="placeHLL placeH-w" value="Clear" onclick="clearTable()">
+                        </div>               
+                    </form>
+                              
+                    <table id="resultsTable">
+                        <tr>
+                            <th>Derivative</th>
+                            <th>Value</th>
+                        </tr>
+                    </table>
+                    
+                </div> 
+        </div>
+       
+    </section>
+      <script src="script.js"></script>
+      
+</body>
+</html>
+
